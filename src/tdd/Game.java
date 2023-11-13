@@ -1,13 +1,25 @@
 package tdd;
 
 public class Game {
-	private int score;
+	private int nbtours = 0;
+	private int[] tabRoll = new int[20]; 
 	
-	void roll(int nbQuilles) {
-		score += nbQuilles;	
+	
+	public void roll(int nbQuilles) {
+		tabRoll[nbtours] = nbQuilles;
+		nbtours++;
+		
 	}
 	
-	int score() {
+	public int score() {
+		int score=0;
+		for(int i =0; i< tabRoll.length; i+=2) {
+			if(tabRoll[i] + tabRoll[i+1] == 10) {
+				
+			
+				}
+			score += tabRoll[i];
+		}
 		return score;
 	}
 }
