@@ -63,7 +63,7 @@ class GameTest {
 	
 	@Test
 	void test_strike() {
-		int[] tabInt = {10,0,3,4};
+		int[] tabInt = {10,3,4};
 		multiple_rolls(tabInt);
 		n_rolls(16, 0);
 		assertEquals(24, game.score());

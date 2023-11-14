@@ -13,14 +13,15 @@ public class Game {
 	
 	public int score() {
 		int score=0;
-		for(int i =0; i< tabRoll.length; i+=2) {
+		for(int i =0; i< tabRoll.length-1; i+=2) {
 			int frame = tabRoll[i] + tabRoll[i+1];
 			//score normal
 			score += frame;
 			
-			//strike en premier ou deuxieme lancée de la frame
-			if(tabRoll[i] == 10 || tabRoll[i+1] ==10) { 
-				score += tabRoll[i+2] + tabRoll[i+3];
+			//strike
+			if(tabRoll[i] == 10) { 
+				score += + tabRoll[i+2];
+				i= i-1;
 			//spare
 			} else if(frame == 10) {
 				score += tabRoll[i+2];
