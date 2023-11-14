@@ -83,5 +83,11 @@ class GameTest {
 		assertEquals(131, game.score());
 	}
 	
+	@Test
+	void test_genie() {
+		n_rolls(12, 10);
+		assertEquals(300, game.score());
+	}
+	
 	
 }
