@@ -6,8 +6,20 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class GameTest {
-	
 	Game game;
+	
+	
+	void multiple_rolls(int[] rolls) {
+		for(int i=0; i<rolls.length; i++) {
+			game.roll(rolls[i]);
+		}
+	}
+	
+	void n_rolls(int times, int nbQuilles) {
+		for(int i=0; i<times; i++) {
+			game.roll(nbQuilles);
+		}
+	}
 	
 	@BeforeEach
 	void init() {
@@ -49,6 +61,20 @@ class GameTest {
 		assertEquals(18, game.score());
 	}
 	
+	@Test
+	void test_strike() {
+		int[] tabInt = {10,0,3,4};
+		multiple_rolls(tabInt);
+		n_rolls(16, 0);
+		assertEquals(24, game.score());
+	}
+	
+	@Test
+	void test_cas_general() {
+		int[] tabInt = {1,2,10,0,10,4,2,0,10,6,2,0,10,6,4,8,2,2,7};
+		multiple_rolls(tabInt);
+		assertEquals(122, game.score());
+	}
 	
 	
 }
