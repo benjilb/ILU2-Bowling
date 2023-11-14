@@ -20,7 +20,7 @@ public class Game {
 			
 			//strike
 			if(tabRoll[i] == 10) { 
-				score += + tabRoll[i+2];
+				score += tabRoll[i+2];
 				i= i-1;
 			//spare
 			} else if(frame == 10) {

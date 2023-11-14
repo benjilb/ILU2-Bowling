@@ -76,5 +76,12 @@ class GameTest {
 		assertEquals(122, game.score());
 	}
 	
+	@Test
+	void test_extension() {
+		int[] tabInt = {1,2,10,0,10,4,2,0,10,6,2,0,10,6,4,8,2,2,8,8};
+		multiple_rolls(tabInt);
+		assertEquals(131, game.score());
+	}
+	
 	
 }
